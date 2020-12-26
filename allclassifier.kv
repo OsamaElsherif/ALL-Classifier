@@ -1,0 +1,26 @@
+<MyGrid>
+    my_widget: my_widget
+    filechooser: filechooser
+    image: image
+
+    GridLayout:
+        id: my_widget
+        cols: 1
+        size: root.width, root.height
+        
+        GridLayout:
+            cols: 2
+            Image:
+                id: image
+                source: ""
+        
+            Button:
+                text: "Start"
+                font_size: 40
+                on_press: root.btn(filechooser.selection)
+
+        FileChooserIconView:
+            id: filechooser
+            on_selection: root.selectedImage(filechooser.selection)
+
+	
